@@ -433,7 +433,12 @@ def paint_dipper():
         cy = ay + (by - ay) * t - ny * 16.0
         disc(cx, cy, 20.0 - abs(t - 0.5) * 10.0, (255, 200, 92),
              alpha=0.55, soft=6)
-    disc(ax - 14, ay - 16, 13, (255, 234, 172), alpha=0.8, soft=4)
+    # strengthened gloss (revision): brighter, larger tip glint plus a
+    # second sheen highlight mid-head, so the honey on the dipper reads
+    # freshly dipped and glossy.
+    disc(ax - 14, ay - 16, 18, (255, 238, 180), alpha=0.92, soft=5)
+    disc(ax + (bx - ax) * 0.30 - nx * 18, ay + (by - ay) * 0.30 - ny * 18,
+         9, (255, 240, 196), alpha=0.85, soft=3)
     # groove shadows across the capsule
     for d in (30.0, 50.0, 70.0, 88.0):
         cx = hx - ux * d
